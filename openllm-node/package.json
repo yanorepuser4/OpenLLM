@@ -3,10 +3,21 @@
   "version": "0.4.29.dev0",
   "description": "NodeJS library for OpenLLM",
   "type": "module",
+  "types": "./types/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "src",
+    "compiler.cjs",
+    "*.d.ts",
+    "README.md"
+  ],
   "repository": {
     "url": "git@github.com:bentoml/OpenLLM.git",
     "type": "git"
   },
+  "homepage": "https://bentoml.com",
   "keywords": [
     "openllm",
     "llm",
