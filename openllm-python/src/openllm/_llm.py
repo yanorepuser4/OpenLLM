@@ -441,15 +441,15 @@ class LLM(t.Generic[M, T], ReprMixin):
       if tid:
         stop.add(self.tokenizer.decode(tid))
 
-    if prompt_token_ids is None:
-      if prompt is None:
-        raise ValueError('Either prompt or prompt_token_ids must be specified.')
-      prompt_token_ids = self.tokenizer.encode(prompt)
+    # if prompt_token_ids is None:
+    #   if prompt is None:
+    #     raise ValueError('Either prompt or prompt_token_ids must be specified.')
+    #   prompt_token_ids = self.tokenizer.encode(prompt)
 
     request_id = gen_random_uuid() if request_id is None else request_id
     previous_texts, previous_num_tokens = [''] * config['n'], [0] * config['n']
     async for out in self.runner.generate_iterator.async_stream(
-      prompt_token_ids, request_id, stop=stop, adapter_name=adapter_name, **config.model_dump(flatten=True)
+      prompt, request_id, stop=stop, adapter_name=adapter_name, **config.model_dump(flatten=True)
     ):
       generated = GenerationOutput.from_runner(out).with_options(prompt=prompt)
       delta_outputs = [None] * len(generated.outputs)

@@ -72,7 +72,7 @@ class vLLMRunnable(bentoml.Runnable):
       stop=list(stop_), temperature=temperature, top_p=top_p, **attrs
     ).to_sampling_config()
 
-    async for request_output in self.model.generate(None, sampling_params, request_id, prompt_token_ids):
+    async for request_output in self.model.generate(prompt_token_ids, sampling_params, request_id):
       # XXX: Need to write a hook for serialisation None correctly
       if request_output.prompt_logprobs is not None:
         request_output.prompt_logprobs = [it if it else {} for it in request_output.prompt_logprobs]
