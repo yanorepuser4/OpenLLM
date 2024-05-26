@@ -3,61 +3,30 @@
 <!-- hatch-fancy-pypi-readme intro start -->
 
 <div align="center">
-    <h1 align="center">🦾 OpenLLM: Self-Hosting Large Language Models Made Easy</h1>
+    <h1 align="center">🦾 OpenLLM: Self-Hosting LLMs Made Easy</h1>
     <a href="https://pypi.org/project/openllm">
         <img src="https://img.shields.io/pypi/v/openllm.svg?logo=pypi&label=PyPI&logoColor=gold" alt="pypi_status" />
     </a><a href="https://test.pypi.org/project/openllm/">
         <img src="https://img.shields.io/badge/Nightly-PyPI?logo=pypi&label=PyPI&color=gray&link=https%3A%2F%2Ftest.pypi.org%2Fproject%2Fopenllm%2F" alt="test_pypi_status" />
-    </a><a href="https://twitter.com/bentomlai">
-        <img src="https://badgen.net/badge/icon/@bentomlai/1DA1F2?icon=twitter&label=Follow%20Us" alt="Twitter" />
-    </a><a href="https://l.bentoml.com/join-openllm-discord">
-        <img src="https://badgen.net/badge/icon/OpenLLM/7289da?icon=discord&label=Join%20Us" alt="Discord" />
     </a><a href="https://github.com/bentoml/OpenLLM/actions/workflows/ci.yml">
         <img src="https://github.com/bentoml/OpenLLM/actions/workflows/ci.yml/badge.svg?branch=main" alt="ci" />
     </a><a href="https://results.pre-commit.ci/latest/github/bentoml/OpenLLM/main">
         <img src="https://results.pre-commit.ci/badge/github/bentoml/OpenLLM/main.svg" alt="pre-commit.ci status" />
-    </a><br>
-    <a href="https://pypi.org/project/openllm">
-        <img src="https://img.shields.io/pypi/pyversions/openllm.svg?logo=python&label=Python&logoColor=gold" alt="python_version" />
-    </a><a href="https://github.com/pypa/hatch">
-        <img src="https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg" alt="Hatch" />
-    </a><a href="https://github.com/bentoml/OpenLLM/blob/main/STYLE.md">
-        <img src="https://img.shields.io/badge/code%20style-Google-000000.svg" alt="code style" />
-    </a><a href="https://github.com/astral-sh/ruff">
-        <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json" alt="Ruff" />
-    </a><a href="https://github.com/python/mypy">
-        <img src="https://img.shields.io/badge/types-mypy-blue.svg" alt="types - mypy" />
-    </a><a href="https://github.com/microsoft/pyright">
-        <img src="https://img.shields.io/badge/types-pyright-yellow.svg" alt="types - pyright" />
-    </a><br>
-    <p>Run any open-source LLMs, such as Llama 2 and Mistral, as OpenAI-compatible API endpoints, locally and in the cloud.</p>
-    <i></i>
+    </a><br><a href="https://twitter.com/bentomlai">
+        <img src="https://badgen.net/badge/icon/@bentomlai/1DA1F2?icon=twitter&label=Follow%20Us" alt="Twitter" />
+    </a><a href="https://l.bentoml.com/join-openllm-discord">
+        <img src="https://badgen.net/badge/icon/OpenLLM/7289da?icon=discord&label=Join%20Us" alt="Discord" />
+    </a>
 </div>
 
 ## 📖 Introduction
 
-OpenLLM is an open-source platform designed to facilitate the deployment and operation of large language models (LLMs) in real-world applications. With OpenLLM, you can run inference on any open-source LLM, deploy them on the cloud or on-premises, and build powerful AI applications.
+OpenLLM helps developers **run any open-source LLMs**, such as Llama 2 and Mistral, as **OpenAI-compatible API endpoints**, locally and in the cloud, optimized for serving throughput and production deployment.
 
-Key features include:
-
-🚂 **State-of-the-art LLMs**: Integrated support for a wide range of open-source LLMs and model runtimes, including but not limited to Llama 2, StableLM, Falcon, Dolly, Flan-T5, ChatGLM, and StarCoder.
-
-🔥 **Flexible APIs**: Serve LLMs over a RESTful API or gRPC with a single command. You can interact with the model using a Web UI, CLI, Python/JavaScript clients, or any HTTP client of your choice.
-
-⛓️ **Freedom to build**: First-class support for LangChain, BentoML, LlamaIndex, OpenAI endpoints, and Hugging Face, allowing you to easily create your own AI applications by composing LLMs with other models and services.
-
-🎯 **Streamline deployment**: Automatically generate your LLM server Docker images or deploy as serverless endpoints via
-[☁️ BentoCloud](https://l.bentoml.com/bento-cloud), which effortlessly manages GPU resources, scales according to traffic, and ensures cost-effectiveness.
-
-🤖️ **Bring your own LLM**: Fine-tune any LLM to suit your needs. You can load LoRA layers to fine-tune models for higher accuracy and performance for specific tasks. A unified fine-tuning API for models (`LLM.tuning()`) is coming soon.
-
-⚡ **Quantization**: Run inference with less computational and memory costs with quantization techniques such as [LLM.int8](https://arxiv.org/abs/2208.07339), [SpQR (int4)](https://arxiv.org/abs/2306.03078), [AWQ](https://arxiv.org/pdf/2306.00978.pdf), [GPTQ](https://arxiv.org/abs/2210.17323), and [SqueezeLLM](https://arxiv.org/pdf/2306.07629v2.pdf).
-
-📡 **Streaming**: Support token streaming through server-sent events (SSE). You can use the `/v1/generate_stream` endpoint for streaming responses from LLMs.
-
-🔄 **Continuous batching**: Support continuous batching via [vLLM](https://github.com/vllm-project/vllm) for increased total throughput.
-
-OpenLLM is designed for AI application developers working to build production-ready applications based on LLMs. It delivers a comprehensive suite of tools and features for fine-tuning, serving, deploying, and monitoring these models, simplifying the end-to-end deployment workflow for LLMs.
+- 🚂 Support a wide range of open-source LLMs including LLMs fine-tuned with your own data
+- ⛓️ OpenAI compatible API endpoints for seamless transition from your LLM app to open-source LLMs
+- 🔥 State-of-the-art serving and inference performance
+- 🎯 Simplified cloud deployment via [BentoML](https://www.bentoml.com)
 
 <!-- hatch-fancy-pypi-readme intro stop -->
 
@@ -70,32 +39,18 @@ OpenLLM is designed for AI application developers working to build production-re
 ## 💾 TL/DR
 
 For starter, we provide two ways to quickly try out OpenLLM:
+
 ### Jupyter Notebooks
 
 Try this [OpenLLM tutorial in Google Colab: Serving Llama 2 with OpenLLM](https://colab.research.google.com/github/bentoml/OpenLLM/blob/main/examples/llama2.ipynb).
 
-### Docker
-
-We provide a docker container that helps you start running OpenLLM:
-
-```bash
-docker run --rm -it -p 3000:3000 ghcr.io/bentoml/openllm start facebook/opt-1.3b --backend pt
-```
-
-> [!NOTE]
-> Given you have access to GPUs and have setup [nvidia-docker](https://github.com/NVIDIA/nvidia-container-toolkit),  you can additionally pass in `--gpus`
-> to use GPU for faster inference and optimization
->```bash
-> docker run --rm --gpus all -p 3000:3000 -it ghcr.io/bentoml/openllm start HuggingFaceH4/zephyr-7b-beta --backend vllm
-> ```
-
-
 ## 🏃 Get started
 
 The following provides instructions for how to get started with OpenLLM locally.
+
 ### Prerequisites
 
-You have installed Python 3.8 (or later) and `pip`. We highly recommend using a [Virtual Environment](https://docs.python.org/3/library/venv.html) to prevent package conflicts.
+You have installed Python 3.9 (or later) and `pip`. We highly recommend using a [Virtual Environment](https://docs.python.org/3/library/venv.html) to prevent package conflicts.
 
 ### Install OpenLLM
 
@@ -109,66 +64,23 @@ To verify the installation, run:
 
 ```bash
 $ openllm -h
-
-Usage: openllm [OPTIONS] COMMAND [ARGS]...
-
-   ██████╗ ██████╗ ███████╗███╗   ██╗██╗     ██╗     ███╗   ███╗
-  ██╔═══██╗██╔══██╗██╔════╝████╗  ██║██║     ██║     ████╗ ████║
-  ██║   ██║██████╔╝█████╗  ██╔██╗ ██║██║     ██║     ██╔████╔██║
-  ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║██║     ██║     ██║╚██╔╝██║
-  ╚██████╔╝██║     ███████╗██║ ╚████║███████╗███████╗██║ ╚═╝ ██║
-   ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝     ╚═╝.
-
-  An open platform for operating large language models in production.
-  Fine-tune, serve, deploy, and monitor any LLMs with ease.
-
-Options:
-  -v, --version  Show the version and exit.
-  -h, --help     Show this message and exit.
-
-Commands:
-  build       Package a given models into a BentoLLM.
-  import      Setup LLM interactively.
-  models      List all supported models.
-  prune       Remove all saved models, (and optionally bentos) built with OpenLLM locally.
-  query       Query a LLM interactively, from a terminal.
-  start       Start a LLMServer for any supported LLM.
-  start-grpc  Start a gRPC LLMServer for any supported LLM.
-
-Extensions:
-  build-base-container  Base image builder for BentoLLM.
-  dive-bentos           Dive into a BentoLLM.
-  get-containerfile     Return Containerfile of any given Bento.
-  get-prompt            Get the default prompt used by OpenLLM.
-  list-bentos           List available bentos built by OpenLLM.
-  list-models           This is equivalent to openllm models...
-  playground            OpenLLM Playground.
 ```
 
 ### Start a LLM server
 
-OpenLLM allows you to quickly spin up an LLM server using `openllm start`. For example, to start a [phi-2](https://huggingface.co/microsoft/phi-2) server, run the following:
+OpenLLM allows you to quickly spin up an LLM server using `openllm start`. For example, to start a [Llama 3 8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B) server, run the following:
 
 ```bash
-TRUST_REMOTE_CODE=True openllm start microsoft/phi-2
+openllm start meta-llama/Meta-Llama-3-8B
 ```
-
-This starts the server at [http://0.0.0.0:3000/](http://0.0.0.0:3000/). OpenLLM downloads the model to the BentoML local Model Store if it has not been registered before. To view your local models, run `bentoml models list`.
 
 To interact with the server, you can visit the web UI at [http://0.0.0.0:3000/](http://0.0.0.0:3000/) or send a request using `curl`. You can also use OpenLLM’s built-in Python client to interact with the server:
 
 ```python
 import openllm
 
-client = openllm.client.HTTPClient('http://localhost:3000')
-client.query('Explain to me the difference between "further" and "farther"')
-```
-
-Alternatively, use the `openllm query` command to query the model:
-
-```bash
-export OPENLLM_ENDPOINT=http://localhost:3000
-openllm query 'Explain to me the difference between "further" and "farther"'
+client = openllm.HTTPClient('http://localhost:3000')
+client.generate('Explain to me the difference between "further" and "farther"')
 ```
 
 OpenLLM seamlessly supports many models and their variants. You can specify different variants of the model to be served. For example:
@@ -182,15 +94,6 @@ openllm start <model_id> --<options>
 > for any of the supported models as long as they can be loaded with the model
 > architecture. Use the `openllm models` command to see the complete list of supported
 > models, their architectures, and their variants.
-
-> [!IMPORTANT]
-> If you are testing OpenLLM on CPU, you might want to pass in `DTYPE=float32`. By default,
-> OpenLLM will set model `dtype` to `bfloat16` for the best performance.
-> ```bash
-> DTYPE=float32 openllm start microsoft/phi-2
-> ```
-> This will also applies to older GPUs. If your GPUs doesn't support `bfloat16`, then you also
-> want to set `DTYPE=float16`.
 
 ## 🧩 Supported models
 
@@ -772,7 +675,7 @@ You can specify any of the following OPT models via `openllm start`:
 Run the following command to quickly spin up a Phi server:
 
 ```bash
-TRUST_REMOTE_CODE=True openllm start microsoft/phi-2
+TRUST_REMOTE_CODE=True openllm start microsoft/Phi-3-mini-4k-instruct
 ```
 In a different terminal, run the following command to interact with the server:
 
@@ -791,8 +694,12 @@ openllm query 'What are large language models?'
 You can specify any of the following Phi models via `openllm start`:
 
 
-- [microsoft/phi-2](https://huggingface.co/microsoft/phi-2)
-- [microsoft/phi-1_5](https://huggingface.co/microsoft/phi-1_5)
+- [microsoft/Phi-3-mini-4k-instruct](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct)
+- [microsoft/Phi-3-mini-128k-instruct](https://huggingface.co/microsoft/Phi-3-mini-128k-instruct)
+- [microsoft/Phi-3-small-8k-instruct](https://huggingface.co/microsoft/Phi-3-small-8k-instruct)
+- [microsoft/Phi-3-small-128k-instruct](https://huggingface.co/microsoft/Phi-3-small-128k-instruct)
+- [microsoft/Phi-3-medium-4k-instruct](https://huggingface.co/microsoft/Phi-3-medium-4k-instruct)
+- [microsoft/Phi-3-medium-128k-instruct](https://huggingface.co/microsoft/Phi-3-medium-128k-instruct)
 
 </details>
 
@@ -1121,49 +1028,10 @@ openllm build facebook/opt-6.7b --adapter-id ./path/to/adapter_id --build-ctx .
 > [!IMPORTANT]
 > Fine-tuning support is still experimental and currently only works with PyTorch backend. vLLM support is coming soon.
 
-## 🐍 Python SDK
-
-Each LLM can be instantiated with `openllm.LLM`:
-
-```python
-import openllm
-
-llm = openllm.LLM('microsoft/phi-2')
-```
-
-The main inference API is the streaming `generate_iterator` method:
-
-```python
-async for generation in llm.generate_iterator('What is the meaning of life?'):
-  print(generation.outputs[0].text)
-```
-
-> [!NOTE]
-> The motivation behind making `llm.generate_iterator` an async generator is to provide support for Continuous batching with vLLM backend. By having the async endpoints, each prompt
-> will be added correctly to the request queue to process with vLLM backend.
-
-There is also a _one-shot_ `generate` method:
-
-```python
-await llm.generate('What is the meaning of life?')
-```
-
-This method is easy to use for one-shot generation use case, but merely served as an example how to use `llm.generate_iterator` as it uses `generate_iterator` under the hood.
-
-> [!IMPORTANT]
-> If you need to call your code in a synchronous context, you can use `asyncio.run` that wraps an async function:
->
-> ```python
-> import asyncio
-> async def generate(prompt, **attrs): return await llm.generate(prompt, **attrs)
-> asyncio.run(generate("The meaning of life is", temperature=0.23))
-> ```
-
 ## ⚙️ Integrations
 
 OpenLLM is not just a standalone product; it's a building block designed to
 integrate with other powerful tools easily. We currently offer integration with
-[BentoML](https://github.com/bentoml/BentoML),
 [OpenAI's Compatible Endpoints](https://platform.openai.com/docs/api-reference/completions/object),
 [LlamaIndex](https://www.llamaindex.ai/),
 [LangChain](https://github.com/hwchase17/langchain), and
@@ -1177,11 +1045,9 @@ specify the base_url to `llm-endpoint/v1` and you are good to go:
 ```python
 import openai
 
-client = openai.OpenAI(
-  base_url='http://localhost:3000/v1', api_key='na'
-)  # Here the server is running on localhost:3000
+client = openai.OpenAI(base_url='http://localhost:3000/v1', api_key='na')  # Here the server is running on 0.0.0.0:3000
 
-completions = client.completions.create(
+completions = client.chat.completions.create(
   prompt='Write me a tag line for an ice cream shop.', model=model, max_tokens=64, stream=stream
 )
 ```
@@ -1192,29 +1058,7 @@ The compatible endpoints supports `/completions`, `/chat/completions`, and `/mod
 > You can find out OpenAI example clients under the
 > [examples](https://github.com/bentoml/OpenLLM/tree/main/examples) folder.
 
-### BentoML
-
-OpenLLM LLM can be integrated as a
-[Runner](https://docs.bentoml.com/en/latest/concepts/runner.html) in your
-BentoML service. Simply call `await llm.generate` to generate text. Note that
-`llm.generate` uses `runner` under the hood:
-
-```python
-import bentoml
-import openllm
-
-llm = openllm.LLM('microsoft/phi-2')
-
-svc = bentoml.Service(name='llm-phi-service', runners=[llm.runner])
-
-
-@svc.api(input=bentoml.io.Text(), output=bentoml.io.Text())
-async def prompt(input_text: str) -> str:
-  generation = await llm.generate(input_text)
-  return generation.outputs[0].text
-```
-
-### [LlamaIndex](https://docs.llamaindex.ai/en/stable/module_guides/models/llms/modules.html#openllm)
+### [LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/llm/openllm/)
 
 To start a local LLM with `llama_index`, simply use `llama_index.llms.openllm.OpenLLM`:
 
@@ -1244,68 +1088,15 @@ from llama_index.llms.openllm import OpenLLMAPI
 > [!NOTE]
 > All synchronous and asynchronous API from `llama_index.llms.LLM` are supported.
 
-### [LangChain](https://python.langchain.com/docs/ecosystem/integrations/openllm)
+### [LangChain](https://python.langchain.com/docs/integrations/llms/openllm/)
 
-To quickly start a local LLM with `langchain`, simply do the following:
-
-```python
-from langchain.llms import OpenLLM
-
-llm = OpenLLM(model_name='llama', model_id='meta-llama/Llama-2-7b-hf')
-
-llm('What is the difference between a duck and a goose? And why there are so many Goose in Canada?')
-```
-
-> [!IMPORTANT]
-> By default, OpenLLM use `safetensors` format for saving models.
-> If the model doesn't support safetensors, make sure to pass
-> `serialisation="legacy"` to use the legacy PyTorch bin format.
-
-`langchain.llms.OpenLLM` has the capability to interact with remote OpenLLM
-Server. Given there is an OpenLLM server deployed elsewhere, you can connect to
-it by specifying its URL:
+Spin up an OpenLLM server, and connect to it by specifying its URL:
 
 ```python
 from langchain.llms import OpenLLM
 
 llm = OpenLLM(server_url='http://44.23.123.1:3000', server_type='http')
 llm('What is the difference between a duck and a goose? And why there are so many Goose in Canada?')
-```
-
-To integrate a LangChain agent with BentoML, you can do the following:
-
-```python
-llm = OpenLLM(model_id='google/flan-t5-large', embedded=False, serialisation='legacy')
-tools = load_tools(['serpapi', 'llm-math'], llm=llm)
-agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION)
-svc = bentoml.Service('langchain-openllm', runners=[llm.runner])
-
-
-@svc.api(input=Text(), output=Text())
-def chat(input_text: str):
-  return agent.run(input_text)
-```
-
-> [!NOTE]
-> You can find out more examples under the
-> [examples](https://github.com/bentoml/OpenLLM/tree/main/examples) folder.
-
-### Transformers Agents
-
-OpenLLM seamlessly integrates with
-[Transformers Agents](https://huggingface.co/docs/transformers/transformers_agents).
-
-> [!WARNING]
-> The Transformers Agent is still at an experimental stage. It is
-> recommended to install OpenLLM with `pip install -r nightly-requirements.txt`
-> to get the latest API update for HuggingFace agent.
-
-```python
-import transformers
-
-agent = transformers.HfAgent('http://localhost:3000/hf/agent')  # URL that runs the OpenLLM server
-
-agent.run('Is the following `text` positive or negative?', text="I don't like how this models is generate inputs")
 ```
 
 <!-- hatch-fancy-pypi-readme interim stop -->
@@ -1346,11 +1137,10 @@ There are several ways to deploy your LLMs:
 
 ### ☁️ BentoCloud
 
-Deploy OpenLLM with [BentoCloud](https://www.bentoml.com/bento-cloud/), the
-serverless cloud for shipping and scaling AI applications.
+Deploy OpenLLM with [BentoCloud](https://www.bentoml.com/), the inference platform
+for fast moving AI teams.
 
-1. **Create a BentoCloud account:** [sign up here](https://bentoml.com/cloud)
-   for early access
+1. **Create a BentoCloud account:** [sign up here](https://bentoml.com/)
 
 2. **Log into your BentoCloud account:**
 
@@ -1398,26 +1188,6 @@ capabilities or have any questions, don't hesitate to reach out in our
 Checkout our
 [Developer Guide](https://github.com/bentoml/OpenLLM/blob/main/DEVELOPMENT.md)
 if you wish to contribute to OpenLLM's codebase.
-
-## 🍇 Telemetry
-
-OpenLLM collects usage data to enhance user experience and improve the product.
-We only report OpenLLM's internal API calls and ensure maximum privacy by
-excluding sensitive information. We will never collect user code, model data, or
-stack traces. For usage tracking, check out the
-[code](https://github.com/bentoml/OpenLLM/blob/main/openllm-core/src/openllm_core/utils/analytics.py).
-
-You can opt out of usage tracking by using the `--do-not-track` CLI option:
-
-```bash
-openllm [command] --do-not-track
-```
-
-Or by setting the environment variable `OPENLLM_DO_NOT_TRACK=True`:
-
-```bash
-export OPENLLM_DO_NOT_TRACK=True
-```
 
 ## 📔 Citation
 

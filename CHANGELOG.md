@@ -18,6 +18,50 @@ This changelog is managed by towncrier and is compiled at release time.
 
 <!-- towncrier release notes start -->
 
+## [0.5.0-alpha.14](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.14)
+No significant changes.
+
+
+## [0.5.0-alpha.13](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.13)
+No significant changes.
+
+
+## [0.5.0-alpha.12](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.12)
+No significant changes.
+
+
+## [0.5.0-alpha.11](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.11)
+No significant changes.
+
+
+## [0.5.0-alpha.10](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.10)
+No significant changes.
+
+
+## [0.5.0-alpha.9](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.9)
+No significant changes.
+
+
+## [0.5.0-alpha.8](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.8)
+No significant changes.
+
+
+## [0.5.0-alpha.7](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.7)
+No significant changes.
+
+
+## [0.5.0-alpha.6](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.6)
+No significant changes.
+
+
+## [0.5.0-alpha.5](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.5)
+No significant changes.
+
+
+## [0.5.0-alpha.4](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.4)
+No significant changes.
+
+
 ## [0.5.0-alpha.3](https://github.com/bentoml/openllm/tree/v0.5.0-alpha.3)
 No significant changes.
 

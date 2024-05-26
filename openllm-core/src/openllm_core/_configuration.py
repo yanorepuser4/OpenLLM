@@ -3,7 +3,17 @@ import abc, inspect, logging, os, typing as t
 import inflection, orjson, pydantic
 from deepmerge.merger import Merger
 
-from ._typing_compat import DictStrAny, ListStr, LiteralSerialisation, NotRequired, Required, Self, TypedDict, overload
+from ._typing_compat import (
+  DictStrAny,
+  ListStr,
+  LiteralSerialisation,
+  NotRequired,
+  Required,
+  Self,
+  TypedDict,
+  overload,
+  Annotated,
+)
 from .exceptions import ForbiddenAttributeError, MissingDependencyError
 from .utils import field_env_key, first_not_none, is_vllm_available, is_transformers_available
 
@@ -222,6 +232,10 @@ class GenerationConfig(pydantic.BaseModel):
   logprobs: t.Optional[int] = pydantic.Field(
     None, description='Number of log probabilities to return per output token.'
   )
+  detokenize: bool = pydantic.Field(True, description='Whether to detokenize the output.')
+  truncate_prompt_tokens: t.Optional[Annotated[int, pydantic.Field(ge=1)]] = pydantic.Field(
+    None, description='Truncate the prompt tokens.'
+  )
   prompt_logprobs: t.Optional[int] = pydantic.Field(
     None, description='Number of log probabilities to return per input token.'
   )
@@ -234,6 +248,7 @@ class GenerationConfig(pydantic.BaseModel):
   logits_processors: t.Optional[t.List[LogitsProcessor]] = pydantic.Field(
     None, description='List of functions that modify logits based on previously generated tokens.'
   )
+  seed: t.Optional[int] = pydantic.Field(None, description='Random seed for generation.')
 
   def __getitem__(self, item: str) -> t.Any:
     if hasattr(self, item):
@@ -464,6 +479,10 @@ class LLMConfig(pydantic.BaseModel, abc.ABC):
   @overload
   def __getitem__(self, item: t.Literal['logprobs']) -> t.Optional[int]: ...
   @overload
+  def __getitem__(self, item: t.Literal['detokenize']) -> bool: ...
+  @overload
+  def __getitem__(self, item: t.Literal['truncate_prompt_tokens']) -> t.Optional[Annotated[int, pydantic.Field(ge=1)]]: ...
+  @overload
   def __getitem__(self, item: t.Literal['prompt_logprobs']) -> t.Optional[int]: ...
   @overload
   def __getitem__(self, item: t.Literal['skip_special_tokens']) -> bool: ...
@@ -471,6 +490,8 @@ class LLMConfig(pydantic.BaseModel, abc.ABC):
   def __getitem__(self, item: t.Literal['spaces_between_special_tokens']) -> bool: ...
   @overload
   def __getitem__(self, item: t.Literal['logits_processors']) -> t.Optional[t.List[LogitsProcessor]]: ...
+  @overload
+  def __getitem__(self, item: t.Literal['seed']) -> t.Optional[int]: ...
   @overload
   def __getitem__(self, item: t.Literal['max_new_tokens']) -> int: ...
   @overload

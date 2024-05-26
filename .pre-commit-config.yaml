@@ -5,11 +5,11 @@ ci:
   autoupdate_commit_msg: 'ci: pre-commit autoupdate [pre-commit.ci]'
   autofix_prs: false
 default_language_version:
-  python: python3.9 # NOTE: sync with .python-version-default
+  python: python3.11 # NOTE: sync with .python-version-default
 exclude: '.*\.(css|js|svg)$'
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: 'v0.3.5'
+    rev: 'v0.4.4'
     hooks:
       - id: ruff
         alias: r
@@ -68,7 +68,7 @@ repos:
         exclude: ^(docs|tools|openllm-python/tests)
         args: [--config=pyproject.toml]
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v9.0.0
+    rev: v9.3.0
     hooks:
       - id: eslint
         verbose: true

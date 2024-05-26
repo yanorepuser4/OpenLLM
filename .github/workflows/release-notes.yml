@@ -24,7 +24,7 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # ratchet:actions/checkout@v4.1.1
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # ratchet:actions/checkout@v4.1.6
         with:
           fetch-depth: 0
           ref: '${{ inputs.tags }}'
@@ -76,7 +76,7 @@ jobs:
       #     name: installers
       #     path: installers
       - name: Create release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # ratchet:softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@69320dbe05506a9a39fc8ae11030b214ec2d1f87 # ratchet:softprops/action-gh-release@v2.0.5
         with:
           # Use GH feature to populate the changelog automatically
           generate_release_notes: true
